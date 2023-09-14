@@ -4,8 +4,7 @@ import Faq from "../pages/FAQ";
 import Tentang from "../pages/Tentang";
 
 
-
-export default function () {
+const Content = () => {
 
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
@@ -25,3 +24,6 @@ export default function () {
 
     return content;
 }
+
+
+export default Content;

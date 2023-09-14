@@ -1,6 +1,4 @@
-
-import { ReactComponent as Logo } from "../logo-optimized.svg";
-import { useState, useEffect } from "react"; 
+import { useState, useEffect } from "react";
 
 const images = [
   "pic-784515.webp",
@@ -11,8 +9,7 @@ const images = [
 ];
 
 
-
-export default () => {
+const Beranda = () => {
 
   const [bgImage, setBgImage] = useState(getRandomImg()); // Use state to manage the background image
 
@@ -28,7 +25,8 @@ export default () => {
 
     // Clear the interval when the component unmounts
     return () => clearInterval(intervalId);
-  }, []);
+    
+  }, [bgImage, setBgImage]);
 
   function getRandomImg() {
     const index = Math.floor(Math.random() * images.length);
@@ -48,7 +46,7 @@ export default () => {
 
         <article>
           <p>
-            
+
           </p>
         </article>
 
@@ -56,3 +54,5 @@ export default () => {
     </div>
   );
 };
+
+export default Beranda;
